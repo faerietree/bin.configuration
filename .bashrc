@@ -67,28 +67,23 @@ export PATH="$PATH:$HOME/texlive/bin"
 #tex4ht
 export PATH="$PATH:$HOME/part_db_eclipse/tex4ht/bin"
 
-#export PATH="$PATH:/opt/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI/bin#:/opt/CodeSourcery/#Sourcery_G++_Lite/bin"
-
-#export PATH="$PATH:~/sat/bin"
-
-#export PATH="$PATH:/opt/CodeSourcery/Sourcery_G++_Lite/bin"
 
 
-
-#JAVA CONFIGURATION AFTER LOGON
+# JAVA CONFIGURATION AFTER LOGON
 #export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
-#SWITCH BETWEEN DIFFEREN JAVA VERSIONS USING SYMBOLIC LINKS:
-#e.g. to use java-7 execute: $   ln -s /usr/lib/jvm/java-7-openjdk-amd64 ~/lib/jdk
-export JAVA_HOME=~/lib/jdk_
+# SWITCH BETWEEN DIFFEREN JAVA VERSIONS USING SYMBOLIC LINKS:
+# e.g. to use java-7 execute: $   ln -s /usr/lib/jvm/java-7-openjdk-amd64 ~/lib/jdk
+#export JAVA_HOME=~/lib/jdk_
 #export CLASSPATH="/usr/local/tomcat/bin/startup.sh;/usr/local/tomcat/common/lib/servlet-api.jar"
 
 
-#start tomcat by default
+# Start tomcat by default
 #sh /usr/local/tomcat/bin/startup.sh
-#now done per /etc/init.d/tomcat ... see this file for more info
-#use
+# now done per /etc/init.d/tomcat ... see this file for more info
+# use
 #/usr/local/tomcat/bin/shutdown.sh
-#/usr/local/tomcat/bin/startup.sh    # For eclipse local server debugging tomcat needs to be stopped or the server startup will fail.
+#/usr/local/tomcat/bin/startup.sh
+# For eclipse local server debugging tomcat needs to be stopped or the server startup will fail.
 
 #sudo chmod +x /usr/bin/*.sh
 #sudo chmod +x /usr/local/tomcat/bin/*.sh
@@ -96,7 +91,7 @@ export JAVA_HOME=~/lib/jdk_
 
 
 
-#GDB + PYCLEWN + VIM + CLANG CODE COMPLETION + CSCOPE for resolving function calls and much more.
+# GDB + PYCLEWN + VIM + CLANG CODE COMPLETION + CSCOPE for resolving function calls and much more.
 
 export VISUAL=vim
 export EDITOR=$VISUAL
