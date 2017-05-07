@@ -1,0 +1,27 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/libexec/gnome-settings-daemon >/dev/null; then
+#  /usr/libexec/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#lxappearance theme switcher or xfce-mcs-manager &
+tint2 &
+nitrogen --restore &  # restore last background set by cron
+pavucontrol & # If you do not want pulseaudio, then uninstall this program too.
+#volumeicon -b &
+#already running devmon &  # configuration-less auto mounting of removable devices
+xterm -en utf-8 -e sudo watch --interval=10 "upower -i $(upower -e | grep BAT) | grep -E 'state|to\ full|percentage'" &
+xterm -en utf-8 -e sudo watch -n 1 "dmesg | tail -n \$((LINES-10))" &
+xterm -en utf-8 -e tmux new -d -s session 'top' \; split-window -d 'ss' \; new-window -d 'irssi --connect irc.freenode.net --nick ${USER}' \; next-window \; attach \; &
+xterm -en utf-8 -e sudo ss &
+xterm -en utf-8 -e xbacklight =1 &
+
