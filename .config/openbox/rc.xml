@@ -300,14 +300,190 @@
 
   <!-- Keybindings for running applications -->
   <keybind key="W-e">
-    <action name="Execute">
-      <startupnotify>
-        <enabled>true</enabled>
-        <name>Konqueror</name>
-      </startupnotify>
-      <command>kfmclient openProfile filemanagement</command>
-    </action>
+
+    <keybind key="W-e">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Konqueror</name>
+        </startupnotify>
+        <command>kfmclient openProfile filemanagement</command>
+      </action>
+    </keybind>
+    <keybind key="a">
+      <action name="Execute">
+          <command>~/tor-browser_en-US/Browser/start-tor-browser --detach</command>
+      </action>
+    </keybind>
+    <keybind key="e">
+      <action name="Execute">
+            <command>gedit</command>
+      </action>
+    </keybind>
+    <keybind key="g">
+      <action name="Execute">
+            <command>gimp</command>
+      </action>
+    </keybind>
+    <keybind key="l">
+      <action name="Execute">
+            <command>leafpad</command>
+      </action>
+    </keybind>
+    <keybind key="m">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>thunderbird</name>
+        </startupnotify>
+        <command>thunderbird</command>
+      </action>
+    </keybind>
+    <keybind key="t">
+      <action name="Execute">
+            <command>xterm -en utf-8</command>
+      </action>
+    </keybind>
+    <keybind key="v">
+      <action name="Execute">
+            <command>inkscape</command>
+      </action>
+    </keybind>
+
+
+
   </keybind>
+
+  <!-- adapted from https://urukrama.wordpress.com/2011/10/30/manual-tiling-in-openbox/ -->
+  <keybind key="W-a">
+  <!-- position windows -->
+      <!-- aeiah's semi-tiling mode -->
+      <keybind key="KP_6">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>50%</x>
+          <y>0</y>
+          <width>50%</width>
+          <height>100%</height>
+        </action>
+      </keybind>
+      <keybind key="KP_4">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>0</y>
+          <width>50%</width>
+          <height>100%</height><!-- 1108 -->
+        </action>
+      </keybind>
+      <keybind key="KP_8">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>0</y>
+          <width>2048</width>
+          <height>576</height>
+        </action>
+      </keybind>
+      <keybind key="KP_2">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>564</y>
+          <width>2048</width>
+          <height>564</height>
+        </action>
+      </keybind>
+      <keybind key="KP_9">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>1110</x>
+          <y>0</y>
+          <width>940</width>
+          <height>554</height>
+        </action>
+      </keybind>
+      <keybind key="KP_3">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>1110</x>
+          <y>571</y>
+          <width>940</width>
+          <height>546</height>
+        </action>
+      </keybind>
+      <keybind key="KP_1">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>440</y>
+          <width>720</width>
+          <height>420</height>
+        </action>
+      </keybind>
+      <keybind key="KP_7">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>0</y>
+          <width>720</width>
+          <height>420</height>
+        </action>
+    </keybind>
+    <!-- set a default position -->
+    <keybind key="KP_5">
+    <action name="If">
+         <title>*term</title>
+      <then>
+       <action name="MoveResizeTo">
+	    <x>center</x>
+	    <y>center</y>
+	    <height>600</height>
+	    <width>800</width>
+        </action>
+      </then>
+      <else>
+         <action name="Maximize"/>
+      </else>
+     </action>
+    </keybind>
+
+  </keybind>
+
+
+  <keybind key="W-Return">
+	<action name="ToggleMaximizeFull"/>
+  </keybind>
+  <keybind key="W-A-Return">
+	<action name="ToggleMaximizeVert"/>
+  </keybind>
+
+  <!-- position at edges -->
+  <keybind key="W-KP_8">
+	<action name="MoveResizeTo"><y>0</y></action>
+  </keybind>
+  <keybind key="W-KP_6">
+	<action name="MoveResizeTo"><x>-0</x></action>
+  </keybind>
+  <keybind key="W-KP_2">
+	<action name="MoveResizeTo"><y>-0</y></action>
+  </keybind>
+  <keybind key="W-KP_4">
+	<action name="MoveResizeTo"><x>0</x></action>
+  </keybind>
+
+
+  <keybind key="W-Tab">
+    <action name="NextWindow"><allDesktops>yes</allDesktops></action>
+  </keybind>
+  <keybind key="W-S-Tab">
+    <action name="PreviousWindow"><allDesktops>yes</allDesktops></action>
+  </keybind>
+
+
+  <!-- position windows -END -->
+
+
 </keyboard>
 
 <mouse>
@@ -342,14 +518,14 @@
     </mousebind>
     <mousebind button="A-Right" action="Drag">
       <action name="Resize"/>
-    </mousebind> 
+    </mousebind>
 
     <mousebind button="A-Middle" action="Press">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </mousebind>
-
+<!-- mouse pad interference
     <mousebind button="A-Up" action="Click">
       <action name="GoToDesktop"><to>previous</to></action>
     </mousebind>
@@ -368,6 +544,41 @@
     <mousebind button="A-S-Down" action="Click">
       <action name="SendToDesktop"><to>next</to></action>
     </mousebind>
+-->
+
+  <!-- http://melp.nl/2011/01/10-must-have-key-and-mouse-binding-configs-in-openbox/ -->
+  <!-- move, maximize, ... window when super key is pressed -->
+  <mousebind action="Press" button="W-Left">
+    <action name="Focus"/>
+    <action name="Raise"/>
+  </mousebind>
+  <mousebind action="Drag" button="W-Left">
+    <action name="Move"/>
+  </mousebind>
+  <mousebind action="DoubleClick" button="W-Left">
+    <action name="Focus" />
+    <action name="Raise" />
+    <action name="ToggleMaximizeFull" />
+  </mousebind>
+  <mousebind action="Drag" button="W-A-Left">
+    <action name="Resize"/>
+  </mousebind>
+  <!--
+  <mousebind action="Press" button="W-A-Left">
+    <action name="Lower"/>
+    <action name="FocusToBottom"/>
+    <action name="Unfocus"/>
+  </mousebind>
+  -->
+  <mousebind action="Press" button="W-Right">
+    <action name="Focus"/>
+    <action name="Raise"/>
+    <action name="ShowMenu">
+      <menu>client-menu</menu>
+    </action>
+  </mousebind>
+  <!-- move, maximize, ... -END -->
+
   </context>
 
   <context name="Titlebar">
@@ -594,7 +805,7 @@
     <!-- Menus -->
     <mousebind button="Middle" action="Press">
       <action name="ShowMenu"><menu>client-list-combined-menu</menu></action>
-    </mousebind> 
+    </mousebind>
     <mousebind button="Right" action="Press">
       <action name="ShowMenu"><menu>root-menu</menu></action>
     </mousebind>
@@ -672,7 +883,7 @@
   # order that they appear in this list
 
 
-    # each rule element can be left out or set to 'default' to specify to not 
+    # each rule element can be left out or set to 'default' to specify to not
     # change that attribute of the window
 
     <decor>yes</decor>
