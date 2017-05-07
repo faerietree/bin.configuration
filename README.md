@@ -1,4 +1,4 @@
-# UNIX Configuration
+# Binary configuration files
 
 * dotfiles used for local configuring of UNIX[1] programs.
 
