@@ -480,9 +480,40 @@
     <action name="PreviousWindow"><allDesktops>yes</allDesktops></action>
   </keybind>
 
-
   <!-- position windows -END -->
 
+
+  <!-- adjust display brightness -->
+  <keybind key="XF86MonBrightnessUp">
+    <action name="Execute">
+      <command>xbacklight +5</command>
+    </action>
+  </keybind>
+  <keybind key="XF86MonBrightnessDown">
+    <action name="Execute">
+      <command>xbacklight -5</command>
+    </action>
+  </keybind>
+  <!-- adjust display brightness -END -->
+
+
+  <!-- adjust audio volume -->
+  <keybind key="XF86AudioRaiseVolume">
+    <action name="Execute">
+      <command>amixer set Master 5%+</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioLowerVolume">
+    <action name="Execute">
+      <command>amixer set Master 5%-</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioMute">
+    <action name="Execute">
+      <command>amixer set Master toggle</command>
+    </action>
+  </keybind>
+  <!-- adjust audio volume -END -->
 
 </keyboard>
 
