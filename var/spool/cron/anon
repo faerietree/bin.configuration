@@ -1,0 +1,5 @@
+# min hour day month day of week
+
+#0 1 * * * DISPLAY=:0.0 feh --bg-max "$(find ~/background_images | shuf -n1)"
+0 1 * * *  feh --bg-max "$(find ~/background_images | shuf -n1)"
+#TODO randomize properly 0 1 * * * ~/desktop_background_set_random/desktop_background_set_random.sh
