@@ -16,7 +16,6 @@
 #lxappearance theme switcher or xfce-mcs-manager &
 tint2 &
 nitrogen --restore &  # restore last background set by cron
-pavucontrol & # If you do not want pulseaudio, then uninstall this program too.
 #volumeicon -b &
 #already running devmon &  # configuration-less auto mounting of removable devices
 xterm -en utf-8 -e sudo watch --interval=10 "upower -i $(upower -e | grep BAT) | grep -E 'state|to\ full|percentage'" &
