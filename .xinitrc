@@ -20,4 +20,3 @@ fi
 # ...or the Window Manager of your choice
 exec openbox-session
 
-start-pulseaudio-x11 &
