@@ -1,0 +1,10 @@
+XTerm.vt100.locale: true
+XTerm.vt100.translations: #override \n\
+  Ctrl <Key>M: restore() \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+! Shift Ins pastes selection which goes to PRIMARY only by default. Alternatively:
+!<Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+XTerm.vt100.saveLines: 4096
+! default saveLines is 1024
+
