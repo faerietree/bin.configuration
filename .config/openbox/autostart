@@ -22,6 +22,7 @@ xterm -geometry 100x10-1+1 -en utf-8 -e "sudo ss | less" &
 xterm -geometry 100x7-1+155 -en utf-8 -e 'echo "ip route"; sudo watch --interval=50 "ip route"' &
 xterm -en utf-8 -e tmux new -d -s session 'top' \; split-window -d 'ss' \; new-window -d 'irssi --connect irc.freenode.net --nick ${USER}' \; next-window \; attach \; &
 xterm -en utf-8 -e sudo ss &
+xterm -geometry 100x10+1+1 -en utf-8 -e "cmus" &
 xterm -en utf-8 -e tmux &
 xterm -en utf-8 -e xbacklight =1 &
 
