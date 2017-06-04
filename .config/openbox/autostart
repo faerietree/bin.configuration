@@ -15,9 +15,7 @@
 # If you want to use XFCE config tools...
 #lxappearance theme switcher or xfce-mcs-manager &
 tint2 &
-nitrogen --restore &  # restore last background set by cron
-#volumeicon -b &
-#already running devmon &  # configuration-less auto mounting of removable devices
+#devmon &  # configuration-less auto mounting of removable devices
 xterm -geometry 100x7-1-30 -en utf-8 -e "echo 'battery'; sudo watch --interval=10 \"upower -i $(upower -e | grep BAT) | grep -E 'state|to\ full|percentage'\"" &
 xterm -geometry 100x30-1-155 -en utf-8 -e 'echo "dmesg"; sudo watch -n 1 "dmesg | tail -n \$((LINES-10))"' &
 xterm -geometry 100x10-1+1 -en utf-8 -e "sudo ss | less" &
