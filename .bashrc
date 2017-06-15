@@ -3,7 +3,8 @@
 # for examples
 
 # If not running interactively, don't do anything
-#[ -z "$PS1" ] && return
+[ -z "$PS1" ] && return
+#[[ $- != *i* ]] && return
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -19,26 +20,27 @@ export HISTFILESIZE=  #2000000 #changed: multiplied times 100
 export HISTFILE=~/.bash_eternal_history
 export HISTTIMEFORMAT="[%F %T] "
 
-export HISTIGNORE='&:ls:cd ~:cd ..:exit:h:history:fg:jobs:exit:top'
+export HISTIGNORE='&:ls:cd ~:cd ..:exit:h:history:fg:jobs:top'
 
-# append history entries:
+# append history entries not only at terminal exit to prevent command loss:
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"  #shopt -s histappend
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+#shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# If this is an xterm set the title to user@host:dir
+# Set the title to user@host: dir
+PS1='[\u@\h \W]\$ '
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;\u@\h: \w\a\]\w\$ "
+    #PS1="\[\e]0;\u@\h: \w\a\]\w\$ "
     ;;
 *)
     ;;
@@ -56,16 +58,16 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#    . /etc/bash_completion
+#fi
 
 
 #LaTeX Live
-export PATH="$PATH:$HOME/texlive/bin"
+#export PATH="$PATH:$HOME/texlive/bin"
 
 #tex4ht
-export PATH="$PATH:$HOME/part_db_eclipse/tex4ht/bin"
+#export PATH="$PATH:$HOME/part_db_eclipse/tex4ht/bin"
 
 
 
