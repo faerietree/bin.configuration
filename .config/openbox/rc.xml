@@ -301,33 +301,34 @@
   <!-- Keybindings for running applications -->
   <keybind key="W-e">
 
-    <keybind key="W-e">
+    <keybind key="b">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Konqueror</name>
-        </startupnotify>
-        <command>kfmclient openProfile filemanagement</command>
+        <command>xterm -en utf-8 -e blender</command>
       </action>
     </keybind>
     <keybind key="a">
       <action name="Execute">
-          <command>~/tor-browser_en-US/Browser/start-tor-browser --detach</command>
+        <command>~/tor-browser_en-US/Browser/start-tor-browser --detach</command>
       </action>
     </keybind>
     <keybind key="e">
       <action name="Execute">
-            <command>gedit</command>
+        <command>xterm -en utf-8 -e vim ~/.bash_eternal_history</command>
+      </action>
+    </keybind>
+    <keybind key="f">
+      <action name="Execute">
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="g">
       <action name="Execute">
-            <command>gimp</command>
+        <command>gimp</command>
       </action>
     </keybind>
     <keybind key="l">
       <action name="Execute">
-            <command>leafpad</command>
+        <command>leafpad</command>
       </action>
     </keybind>
     <keybind key="m">
@@ -339,14 +340,19 @@
         <command>thunderbird</command>
       </action>
     </keybind>
+    <keybind key="o">
+      <action name="Execute">
+        <command>libreoffice</command>
+      </action>
+    </keybind>
     <keybind key="t">
       <action name="Execute">
-            <command>xterm -en utf-8</command>
+        <command>xterm -en utf-8</command>
       </action>
     </keybind>
     <keybind key="v">
       <action name="Execute">
-            <command>inkscape</command>
+        <command>inkscape</command>
       </action>
     </keybind>
 
