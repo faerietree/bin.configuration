@@ -41,12 +41,10 @@ PS1='[\u@\h \W]\$ '
 case "$TERM" in
 xterm*|rxvt*)
     #PS1="\[\e]0;\u@\h: \w\a\]\w\$ "
-    #TERM=xterm-256color
     ;;
 screen*)
-	# To prevent different background colors of text and global in screen|tmux.
-	TERM=screen-256color
-	;;
+    PS1='\u@\h \W\$ '
+    ;;
 *)
     ;;
 esac
