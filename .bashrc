@@ -110,3 +110,4 @@ export EDITOR=$VISUAL
 #[ -f $foamDotFile ] && . $foamDotFile
 # OR soft link.
 
+eval `dircolors`
