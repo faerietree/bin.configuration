@@ -23,7 +23,6 @@ xterm -geometry 100x7-1+155 -en utf-8 -e 'echo "ip route"; sudo watch --interval
 xterm -en utf-8 -e tmux new -d -s session 'top' \; new-window -d 'irssi --connect irc.freenode.net --nick ${USER}' \; next-window \; attach \; &
 xterm -en utf-8 -e sudo ss &
 xterm -geometry 100x10+1+1 -en utf-8 -e "cmus" &
-mplayer -fs -zoom -x 899 -y 600 -geometry 50%:50% "~/Music/The\ History\ of\ the\ World\ -\ Every\ Year--6Wu0Q7x5D0.mkv" &
 xterm -en utf-8 -e tmux -2 &  # forcing tmux to run in 256 color mode
 xterm -en utf-8 -e xbacklight =1 &
 
