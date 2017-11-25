@@ -483,6 +483,35 @@
 	<action name="MoveResizeTo"><x>0</x></action>
   </keybind>
 
+  <keybind key="W-KP_9">
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo">
+      <x>50%</x>
+      <y>0</y>
+    </action>
+  </keybind>
+  <keybind key="W-KP_3">
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo">
+      <x>50%</x>
+      <y>50%</y>
+    </action>
+  </keybind>
+  <keybind key="W-KP_1">
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>50%</y>
+    </action>
+  </keybind>
+  <keybind key="W-KP_7">
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>0</y>
+    </action>
+  </keybind>
+
 
   <keybind key="W-Tab">
     <action name="NextWindow"><allDesktops>yes</allDesktops></action>
