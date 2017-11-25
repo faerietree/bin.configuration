@@ -326,6 +326,11 @@
         <command>gimp</command>
       </action>
     </keybind>
+    <keybind key="k">
+      <action name="Execute">
+        <command>kicad</command>
+      </action>
+    </keybind>
     <keybind key="l">
       <action name="Execute">
         <command>leafpad</command>
