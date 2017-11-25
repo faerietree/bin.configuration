@@ -512,6 +512,16 @@
     </action>
   </keybind>
 
+  <!-- set a default position -->
+  <keybind key="W-KP_5">
+   <action name="MoveResizeTo">
+    <x>center</x>
+    <y>center</y>
+    <height>100%</height>
+    <width>50%</width>
+   </action>
+  </keybind>
+
 
   <keybind key="W-Tab">
     <action name="NextWindow"><allDesktops>yes</allDesktops></action>
