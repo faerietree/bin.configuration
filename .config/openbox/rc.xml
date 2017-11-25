@@ -522,6 +522,17 @@
    </action>
   </keybind>
 
+  <!-- maim screeny top line position -->
+  <keybind key="W-KP_0">
+   <action name="MoveResizeTo">
+    <x>0</x>
+    <y>0</y>
+    <height>5%</height>
+    <width>100%</width>
+   </action>
+  </keybind>
+
+
 
   <keybind key="W-Tab">
     <action name="NextWindow"><allDesktops>yes</allDesktops></action>
