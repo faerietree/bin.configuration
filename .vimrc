@@ -23,7 +23,7 @@ set copyindent
 nmap <leader><tab> m'0i<tab><esc>`'l
 set nojoinspaces " just one space after a period (when joining)
 set nocompatible
-set number
+set nonumber
 "set smartcase
 set softtabstop=0
 set textwidth=0
@@ -65,9 +65,9 @@ let g:syntastic_python_checkers = ['python']
 
 
 " draw tabs
-autocmd BufNewFile,BufRead * set list listchars=tab:>-
+"autocmd BufNewFile,BufRead * set list listchars=tab:>-
 "set list listchars=tab:▸\
-set listchars=tab:>-,trail:_ list
+"set listchars=tab:>-,trail:_ list
 
 " highlight any spaces that are followed by a tab (the horror!)
 " and any _single_ space that comes after ^\t+ (this is usually accedental)
