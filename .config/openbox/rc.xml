@@ -200,7 +200,27 @@
         <desktop>10</desktop>
       </action>
     </keybind>
-    <keybind key="A-Tab">
+
+	<!-- Keybindings for window switching -->
+  <keybind key="A-Tab">
+    <action name="NextWindow">
+      <finalactions>
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="Unshade"/>
+      </finalactions>
+    </action>
+  </keybind>
+  <keybind key="A-S-Tab">
+    <action name="PreviousWindow">
+      <finalactions>
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="Unshade"/>
+      </finalactions>
+    </action>
+  </keybind>
+    <keybind key="W-Tab">
       <action name="NextWindow">
         <raise>yes</raise>
         <allDesktops>yes</allDesktops>
@@ -210,7 +230,16 @@
         </finalactions>
       </action>
     </keybind>
-    <keybind key="W-Tab">
+    <!--
+  <keybind key="W-Tab">
+    <action name="NextWindow"><allDesktops>yes</allDesktops></action>
+  </keybind>
+  -->
+  <keybind key="W-S-Tab">
+    <action name="PreviousWindow"><allDesktops>yes</allDesktops></action>
+  </keybind>
+
+    <keybind key="A-W-Tab">
       <action name="NextWindow">
         <allDesktops>yes</allDesktops>
         <finalactions>
@@ -222,6 +251,111 @@
         </finalactions>
       </action>
     </keybind>
+  <keybind key="C-A-Tab">
+    	<action name="NextWindow">
+      	  <panels>yes</panels><desktop>yes</desktop>
+      	  <finalactions>
+        	<action name="Focus"/>
+        	<action name="Raise"/>
+        	<action name="Unshade"/>
+      	  </finalactions>
+    	</action>
+  	  </keybind>
+  	  <!-- position windows -END -->
+
+
+  <!-- adjust display brightness -->
+  <keybind key="XF86MonBrightnessUp">
+    <action name="Execute">
+      <command>light -S +5</command>
+      <!--
+      <command>xbacklight +5</command>
+      -->
+    </action>
+  </keybind>
+  <keybind key="XF86MonBrightnessDown">
+    <action name="Execute">
+      <command>light -S -5</command>
+      <!--
+      <command>xbacklight -5</command>
+      -->
+    </action>
+  </keybind>
+  <!-- adjust display brightness -END -->
+
+  <!-- adjust audio volume -->
+  <keybind key="XF86AudioRaiseVolume">
+    <action name="Execute">
+      <command>amixer set Master 5%+</command>
+      <!--
+        <command>pamixer -i 2</command>
+      -->
+    </action>
+  </keybind>
+  <keybind key="XF86AudioLowerVolume">
+    <action name="Execute">
+      <command>amixer set Master 5%-</command>
+      <!--
+        <command>pamixer -d 2</command>
+      -->
+    </action>
+  </keybind>
+  <keybind key="XF86AudioMute">
+    <action name="Execute">
+      <command>amixer set Master toggle</command>
+      <!--
+        <command>pamixer -t</command>
+      -->
+    </action>
+  </keybind>
+  <!-- adjust audio volume -END -->
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>playerctl stop</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+
+
+  <!-- Keybindings for window switching with the arrow keys -->
+  <keybind key="W-S-Right">
+    <action name="DirectionalCycleWindows">
+      <direction>right</direction>
+    </action>
+  </keybind>
+  <keybind key="W-S-Left">
+    <action name="DirectionalCycleWindows">
+      <direction>left</direction>
+    </action>
+  </keybind>
+  <keybind key="W-S-Up">
+    <action name="DirectionalCycleWindows">
+      <direction>up</direction>
+    </action>
+  </keybind>
+  <keybind key="W-S-Down">
+    <action name="DirectionalCycleWindows">
+      <direction>down</direction>
+    </action>
+  </keybind>
+
+
+
+
     <keybind key="C-A-Right">
       <action name="DesktopNext"/>
     </keybind>
@@ -380,51 +514,6 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <command>pamixer -i 2</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <command>pamixer -d 2</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <command>pamixer -t</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioStop">
-      <action name="Execute">
-        <command>playerctl stop</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioPlay">
-      <action name="Execute">
-        <command>playerctl play-pause</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioPrev">
-      <action name="Execute">
-        <command>playerctl previous</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioNext">
-      <action name="Execute">
-        <command>playerctl next</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessUp">
-      <action name="Execute">
-        <command>xbacklight +10</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessDown">
-      <action name="Execute">
-        <command>xbacklight -10</command>
-      </action>
-    </keybind>
     <keybind key="Print">
       <action name="Execute">
         <command>scrot 'screenshot_%Y%m%d-%H%M%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
@@ -450,11 +539,75 @@
         <command>exo-open --launch WebBrowser</command>
       </action>
     </keybind>
-    <keybind key="W-e">
+  <!-- Keybindings for running applications -->
+  <keybind key="W-e">
+
+    <keybind key="b">
       <action name="Execute">
-        <command>subl3</command>
+        <command>xterm -en utf-8 -e blender</command>
       </action>
     </keybind>
+    <keybind key="a">
+      <action name="Execute">
+        <command>~/tor-browser_en-US/Browser/start-tor-browser --detach</command>
+      </action>
+    </keybind>
+    <keybind key="e">
+      <action name="Execute">
+        <command>xterm -en utf-8 -e vim ~/.bash_eternal_history</command>
+      </action>
+    </keybind>
+    <keybind key="f">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="g">
+      <action name="Execute">
+        <command>gimp</command>
+      </action>
+    </keybind>
+    <keybind key="k">
+      <action name="Execute">
+        <command>kicad</command>
+      </action>
+    </keybind>
+    <keybind key="l">
+      <action name="Execute">
+        <command>leafpad</command>
+      </action>
+    </keybind>
+    <keybind key="m">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>thunderbird</name>
+        </startupnotify>
+        <command>thunderbird</command>
+      </action>
+    </keybind>
+    <keybind key="o">
+      <action name="Execute">
+        <command>libreoffice</command>
+      </action>
+    </keybind>
+    <keybind key="t">
+      <action name="Execute">
+        <command>xterm -en utf-8</command>
+      </action>
+    </keybind>
+    <keybind key="v">
+      <action name="Execute">
+        <command>inkscape</command>
+      </action>
+    </keybind>
+    <keybind key="x">
+      <action name="Execute">
+        <command>xed</command>
+      </action>
+    </keybind>
+  </keybind>
+
     <keybind key="C-A-m">
       <action name="Execute">
         <command>xfce4-settings-manager</command>
@@ -556,6 +709,180 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
+
+
+  <!-- adapted from https://urukrama.wordpress.com/2011/10/30/manual-tiling-in-openbox/ -->
+  <keybind key="W-a">
+  <!-- position windows -->
+      <!-- aeiah's semi-tiling mode -->
+      <keybind key="KP_6">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>50%</x>
+          <y>0</y>
+          <width>50%</width>
+          <height>100%</height>
+        </action>
+      </keybind>
+      <keybind key="KP_4">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>0</y>
+          <width>50%</width>
+          <height>100%</height><!-- 1108 -->
+        </action>
+      </keybind>
+      <keybind key="KP_8">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>0</y>
+          <width>100%</width>
+          <height>50%</height>
+        </action>
+      </keybind>
+      <keybind key="KP_2">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>50%</y>
+          <width>100%</width>
+          <height>50%</height>
+        </action>
+      </keybind>
+      <keybind key="KP_9">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>50%</x>
+          <y>0</y>
+          <width>50%</width>
+          <height>50%</height>
+        </action>
+      </keybind>
+      <keybind key="KP_3">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>50%</x>
+          <y>50%</y>
+          <width>50%</width>
+          <height>50%</height>
+        </action>
+      </keybind>
+      <keybind key="KP_1">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>50%</y>
+          <width>50%</width>
+          <height>50%</height>
+        </action>
+      </keybind>
+      <keybind key="KP_7">
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo">
+          <x>0</x>
+          <y>0</y>
+          <width>50%</width>
+          <height>50%</height>
+        </action>
+    </keybind>
+    <!-- set a default position -->
+    <keybind key="KP_5">
+    <action name="If">
+         <title>*term</title>
+      <then>
+       <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+        <height>100%</height>
+        <width>50%</width>
+        </action>
+      </then>
+      <else>
+         <action name="Maximize"/>
+      </else>
+     </action>
+    </keybind>
+
+  </keybind>
+
+  <keybind key="W-A-Return">
+	<action name="ToggleMaximizeVert"/>
+  </keybind>
+
+
+  <keybind key="W-Return">
+	<action name="ToggleMaximizeFull"/>
+  </keybind>
+
+  <!-- position at edges -->
+  <keybind key="W-S-KP_8">
+	<action name="MoveResizeTo"><y>0</y></action>
+  </keybind>
+  <keybind key="W-S-KP_6">
+	<action name="MoveResizeTo"><x>-0</x></action>
+  </keybind>
+  <keybind key="W-S-KP_2">
+	<action name="MoveResizeTo"><y>-0</y></action>
+  </keybind>
+  <keybind key="W-S-KP_4">
+	<action name="MoveResizeTo"><x>0</x></action>
+  </keybind>
+
+  <keybind key="W-S-KP_9">
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo">
+      <x>50%</x>
+      <y>0</y>
+    </action>
+  </keybind>
+  <keybind key="W-S-KP_3">
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo">
+      <x>50%</x>
+      <y>50%</y>
+    </action>
+  </keybind>
+  <keybind key="W-S-KP_1">
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>50%</y>
+    </action>
+  </keybind>
+
+  <keybind key="W-S-KP_7">
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo">
+      <x>0</x>
+      <y>0</y>
+    </action>
+  </keybind>
+
+  <keybind key="W-KP_0">
+   <action name="MoveResizeTo">
+    <x>0</x>
+    <y>0</y>
+    <height>5%</height>
+    <width>100%</width>
+   </action>
+  </keybind>
+
+
+  <!-- set a default position -->
+  <keybind key="W-S-KP_5">
+   <action name="MoveResizeTo">
+    <x>center</x>
+    <y>center</y>
+    <height>100%</height>
+    <width>50%</width>
+   </action>
+  </keybind>
+
+  <!-- maim screeny top line position -->
+
+
     <keybind key="W-KP_1">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
