@@ -21,3 +21,22 @@ xfsettingsd &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Side shortcuts for file managers
 xdg-user-dirs-gtk-update &
+
+#tint2 &
+#devmon &  # configuration-less auto mounting of removable devices
+sleep 1
+xterm -geometry 100x7-1-30 -en utf-8 -e "echo 'battery'; sudo watch --interval=10 \"upower -i $(upower -e | grep BAT) | grep -E 'state|to\ full|percentage'\"" &
+xterm -geometry 100x30-1-155 -en utf-8 -e 'echo "dmesg"; sudo watch -n 2 "dmesg | tail -n \$((LINES-15))"' &
+xterm -geometry 100x10-1+1 -en utf-8 -e "sudo ss | less" &
+xterm -geometry 100x7-1+155 -en utf-8 -e 'echo "ip route"; sudo watch --interval=50 "ip route"' &
+sleep 1
+xterm -en utf-8 -e tmux new -d -s session 'top' \; new-window -d 'irssi --connect irc.freenode.net --nick ${USER}' \; next-window \; attach \; &
+sleep 1
+xterm -en utf-8 -e sudo ss &
+xterm -geometry 100x10+1+1 -en utf-8 -e "cmus" &
+sleep 1
+xterm -en utf-8 -e tmux -2 &  # forcing tmux to run in 256 color mode
+sleep 1
+xterm -en utf-8 -e xbacklight =1 &
+xterm -en utf-8 -e light -S 1 &
+
