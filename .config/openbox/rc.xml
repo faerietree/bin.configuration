@@ -267,7 +267,7 @@
   <!-- adjust display brightness -->
   <keybind key="XF86MonBrightnessUp">
     <action name="Execute">
-      <command>light -S +5</command>
+      <command>light -A 5</command>
       <!--
       <command>xbacklight +5</command>
       -->
@@ -275,7 +275,7 @@
   </keybind>
   <keybind key="XF86MonBrightnessDown">
     <action name="Execute">
-      <command>light -S -5</command>
+      <command>light -U 5</command>
       <!--
       <command>xbacklight -5</command>
       -->
